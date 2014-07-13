@@ -1,7 +1,7 @@
-source("cleandata.R")
+source("cleandata.R") #Load function to clean data
 
 plot4 <- function() {
-    data <- cleanData()
+    data <- cleanData() #Call function to clean data
     png(filename = "plot4.png", width = 480, height = 480, units = "px")
     par (mfrow = c(2,2))
     with(data, {
