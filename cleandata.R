@@ -1,5 +1,6 @@
 cleanData <- function() {
-	##This function download the file from website and clean data
+	#Run this first
+	#This function download the file from website and clean data
 	nameFile<-"clean_data.csv"  
 	data <- download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", destfile="household_power_consumption.zip", method="curl")
 	unzipData<-unzip("household_power_consumption.zip")
