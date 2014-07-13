@@ -5,6 +5,7 @@ cleanData <- function() {
 	unzipData<-unzip("household_power_consumption.zip")
 	cleanData <- read.table(unzipData, header=T, sep=';', na.strings="?", colClasses=c("character","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"))
 	cleanData <- cleanData[(cleanData$Date == "1/2/2007") | (cleanData$Date == "2/2/2007"),]
-	cleanData$DateTime <- strptime(paste(cleanData$Date, cleanData$Time), "%d/%m/%Y %H:%M:%S")
-	write.csv(cleanData, nameFile) ##creates a new .csv file for plotting
+	cleanData$DateTime <- as.POSIXct(strptime(paste(cleanData$Date, cleanData$Time), "%d/%m/%Y %H:%M:%S"))
+	write.csv(cleanData, nameFile)##creates a new .csv file for plotting
+	cleanData
 }
