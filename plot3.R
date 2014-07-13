@@ -1,7 +1,7 @@
-source("cleandata.R")
+source("cleandata.R") #Load function to clean data
 
 plot3 <- function() {
-    data <- cleanData()
+    data <- cleanData() #Call function to clean data
     png(filename = "plot3.png", width = 480, height = 480, units = "px")
     nm = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
     plot(data$DateTime, data$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
